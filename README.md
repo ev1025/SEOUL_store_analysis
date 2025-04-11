@@ -48,6 +48,11 @@
 
 ### 데이터 전처리
 
+ &nbsp;&nbsp;&nbsp;[전처리 과정]
+- Chunking: RecursiveCharacterTextSplitter로 문장 블록 분할
+- Embedding: OpenAIEmbeddings를 통해 의미기반 벡터 생성
+- DB 저장: ChromaDB로 검색 최적화된 벡터 저장 구조 구현
+
 
 ### 주요 기능
 
@@ -71,12 +76,6 @@
 
 3. 고도화된 상가 데이터베이스 구축
 - 직방에서 크롤링한 상가 임대 데이터를 RAG 시스템에 활용하기 적합하도록 벡터화 및 저장 구조 최적화
-
- &nbsp;&nbsp;&nbsp;[전처리 과정]
-- Chunking: RecursiveCharacterTextSplitter로 문장 블록 분할
-- Embedding: OpenAIEmbeddings를 통해 의미기반 벡터 생성
-- DB 저장: ChromaDB로 검색 최적화된 벡터 저장 구조 구현
-
 
 4. 유사 질의 결과 최적화 기능 (Re-Ranking)
 - 여러 개의 매물 후보 중 가장 의미상 적합한 순서로 재배열하여 추천 정확도 극대화

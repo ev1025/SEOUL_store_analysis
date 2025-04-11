@@ -63,23 +63,23 @@
 - 사용자는 “카페 창업에 좋은 위치 알려줘”, “10평대 3천만 원 이하 상가 찾아줘” 등의 질문으로 AI가 자동 분석하고 "맞춤매물"을 추천해주는 챗봇 인터페이스 제공
 
 기술 기반
-• Prompt Engineering: Few-shot 학습 프롬프트 + 질의 함수 구조 설계
-• 질문 예시 사전 삽입(System Prompt): 다양한 유저 유형과 이에 따른 니즈를 고려한 맞춤 대응 시스템 설계
-• Fine-tuning: GPT-4o-mini에 실제 질의/응답 기반 데이터로 추가 학습 → 도메인 특화 성능 향상
+- Prompt Engineering: Few-shot 학습 프롬프트 + 질의 함수 구조 설계
+- 질문 예시 사전 삽입(System Prompt): 다양한 유저 유형과 이에 따른 니즈를 고려한 맞춤 대응 시스템 설계
+- Fine-tuning: GPT-4o-mini에 실제 질의/응답 기반 데이터로 추가 학습 → 도메인 특화 성능 향상
 
 3. 고도화된 상가 데이터베이스 구축
 - 직방에서 크롤링한 상가 임대 데이터를 RAG 시스템에 활용하기 적합하도록 벡터화 및 저장 구조 최적화
 
 전처리 과정
-•	Chunking: RecursiveCharacterTextSplitter로 문장 블록 분할
-•	Embedding: OpenAIEmbeddings를 통해 의미기반 벡터 생성
-•	DB 저장: ChromaDB로 검색 최적화된 벡터 저장 구조 구현
+- Chunking: RecursiveCharacterTextSplitter로 문장 블록 분할
+- Embedding: OpenAIEmbeddings를 통해 의미기반 벡터 생성
+- DB 저장: ChromaDB로 검색 최적화된 벡터 저장 구조 구현
 
 4. 유사 질의 결과 최적화 기능 (Re-Ranking)
 - 여러 개의 매물 후보 중 가장 의미상 적합한 순서로 재배열하여 추천 정확도 극대화
 
 기술 기반
-•	Cohere Reranker: 질문과 문서 간 의미 유사도 기반 재정렬
-•	MMR (Maximal Marginal Relevance): 결과 다양성과 정밀도 동시 확보
-•	Top-K 최적화: 동일 매물 중복 방지 및 주제군 분산
+- Cohere Reranker: 질문과 문서 간 의미 유사도 기반 재정렬
+- MMR (Maximal Marginal Relevance): 결과 다양성과 정밀도 동시 확보
+- Top-K 최적화: 동일 매물 중복 방지 및 주제군 분산
 

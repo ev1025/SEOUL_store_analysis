@@ -1,4 +1,3 @@
-<img width="226" alt="image" src="https://github.com/user-attachments/assets/c2f45d4a-2589-4d9e-a7e8-34e8dbae8123" /># Business District Analysis Service
 ## 서울시 소상공인을 위한 상권분석 서비스
 
 ### 프로젝트 기간

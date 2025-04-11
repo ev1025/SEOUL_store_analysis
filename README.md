@@ -1,4 +1,4 @@
-# Final_project
+# Seoul_store_analysis
 ## 서울시 소상공인을 위한 상권분석 서비스
 
 ### 프로젝트 기간

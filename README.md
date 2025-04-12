@@ -10,18 +10,19 @@
 | - 데이터 분석 정의서 작성                          | - 프로젝트 기획서 작성                             |
 | - 데이터 수집 (직방 웹사이트 크롤링)               | - 시장조사 및 사용자 리서치                        |
 | - 데이터 전처리 (이상치 처리, 스케일링)            | - 화면 UI/UX 기획 (IA, 와이어프레임, 스트림릿)     |
-| - Machine Learning을 활용한 매출 예측              | - Streamlit 페이지 제작 (기초 화면)                |
-| &nbsp;&nbsp;&nbsp;└ 회귀분석: `RandomForest`, `XGBOOST` | - 발표 자료 제작 (PPT, 시연영상)                   |
+| - Streamlit 페이지 제작 (매출 예측, 매물 추천)     |  - Streamlit 페이지 제작 (각 페이지 기초 화면)                                                  |
+| - Machine Learning을 활용한 매출 예측              |    - 발표 자료 제작 보완 (PPT, 시연영상)              |
+| &nbsp;&nbsp;&nbsp;└ 회귀분석: `RandomForest`, `XGBOOST` |                   |
 | &nbsp;&nbsp;&nbsp;└ 군집분석: `KNN`                 |                                                    |
 | &nbsp;&nbsp;&nbsp;└ 시계열분석: `GRU`, `LSTM`, `DEEPAR+` |                                                    |
-| - Streamlit 페이지 제작 (매출 예측, 매물 추천)     |                                                    |
+
 
 | **😘 이지홍 (데이터 분석)**                            | **🤔 이진우 (데이터 분석)**                            |
 |----------------------------------------------------|----------------------------------------------------|
 | - 프로젝트 기획서 작성                             | - 데이터 분석 정의서 작성                          |
 | - 데이터 수집 (매출 예측 공공데이터)               | - 데이터 전처리 (축소 및 통합)                     |
-| - Advanced RAG 구현(매물 추천)                     | - Fine-tuning (`GPT-4o-mini`, `Gemma3`)            |
-| - 발표 PPT 제작 및 발표                            | - Streamlit 구조 설계 (navigation, session)        |
+| - Advanced RAG 구현(매물 추천)                     | - Fine-tuning (`GPT-4o-mini`, `Gemma3_12b`)            |
+| - 발표 자료 제작 및 발표 (PPT)                            | - Streamlit 구조 설계 (navigation, session)        |
 | - Streamlit 페이지 제작 (100일 생존 확률)&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;         | - Streamlit 페이지 제작 (Home, 상권분석) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          |
 
 ---

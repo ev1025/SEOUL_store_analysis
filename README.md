@@ -129,12 +129,12 @@
 
 
 #### 2) 데이터 모델링
-① 상권 매출 예측 모델
-a) 기능 : 사용자가 선택한 상권 및 업종 정보를 바탕으로, 해당 조건에 맞는 예상 매출을 예측   
-b) 사용 모델
+① 상권 매출 예측 모델   
+a) 기능 : 사용자가 선택한 상권 및 업종 정보를 바탕으로, 해당 조건에 맞는 예상 매출을 예측      
+b) 사용 모델   
 - 회귀 분석: XGBoostClassifier, RandomForestClassifier
 - 군집 분석: KNN
-- 시계열 분석: GRU, LSTM, DeepAR+
+- 시계열 분석: GRU, LSTM, DeepAR+   
 
 c) 특징
 - 공공데이터 기반의 시계열 분석 모델을 활용해 정량적이고 신뢰도 높은 예측 가능
@@ -144,14 +144,15 @@ c) 특징
 <img width="1155" alt="image" src="https://github.com/user-attachments/assets/3f50fab2-4f89-40b1-9901-2850a04e7eaa" />   
 
 
-② 맞춤형 매물 추천 모델 (RAG 기반 LLM)   
-a) 기능 : 사용자가 자연어로 입력한 조건(예: “월세 300만 원 이하, 카페 가능”)을 이해하고, 해당 조건에 맞는 최적 매물 리스트를 추천
-b) 사용 모델
+② 맞춤형 매물 추천 모델 (RAG 기반 LLM)      
+a) 기능 : 사용자가 자연어로 입력한 조건(예: “월세 300만 원 이하, 카페 가능”)을 이해하고, 해당 조건에 맞는 최적 매물 리스트를 추천   
+b) 사용 모델   
 - LLM 모델: GPT-4o-mini, Gemma-3B-12B 파인튜닝 모델
 - Retrieval 방식: RAG(Retrieval Augmented Generation) 기반
 - 검색 최적화: MMR(Maximal Marginal Relevance) 기반 유사 매물 필터링
 - 랭킹 개선: Cohere Rerank를 통해 의미 기반 재정렬 및 중복 제거
 - 체인 구조: LangChain의 RetrievalQA Chain, ContextualCompressionRetriever 적용
+
 c) 특징
 - 다양한 질문 방식(“싸고 넓은 곳”, “사람 많은 곳 근처”)에도 대응하는 대화형 질의 응답 지원
 - AI가 사용자 조건의 의도와 표현을 파악하여 매물을 정확하게 추천

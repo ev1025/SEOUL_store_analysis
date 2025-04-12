@@ -57,6 +57,7 @@
 ### 주요 기능
 
 1. 상권 매출 예측 (Deep Learning 기반)
+<img width="1155" alt="image" src="https://github.com/user-attachments/assets/3f50fab2-4f89-40b1-9901-2850a04e7eaa" />
 
 기능 설명
 - 특정 상권, 업종 입력하면 딥러닝 기반 예측 모델을 통해 예상 매출을 정량적으로 산출

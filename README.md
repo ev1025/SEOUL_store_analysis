@@ -50,7 +50,11 @@
 
 ### 3. 데이터 소개
 
-&nbsp; 공공 및 민간에서 수집한 다양한 데이터를 활용하여 상권 분석, 매출 예측, 매물 추천 등의 기능을 구현하였습니다.
+&nbsp; 프로젝트에는 공공 데이터 포털, 서울 열린 데이터 광장, 직방의 데이터가 활용 되었습니다.
+| 공공 데이터 포털 | 서울 열린데이터 광장 | 직방 |
+|:--------------:|:------------------:|:---------:|
+| <img src="https://www.gwff.kr/template/resources/images/cont/site_img_01.png" alt="공공 데이터 포털" width="230"/> | <img src="https://data.seoul.go.kr/resources/img/common/logo.png" alt="서울 열린데이터광장" width="200"/> | <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMRFuKiLDgd9dVp0eMn_dSyDm9z2h3WFqU6g&s" alt="직방" width="230"/> |
+
 
 #### &nbsp; 1) 👫 인구 및 생활 기반 데이터 (**서울 열린데이터 광장**)
 ```

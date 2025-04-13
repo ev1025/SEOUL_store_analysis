@@ -189,9 +189,9 @@
 
 <img width="456" alt="image" src="https://github.com/user-attachments/assets/556f1cd6-678a-45a5-8d0a-c15897bf989b" />
 
-<img width="466" alt="image" src="https://github.com/user-attachments/assets/60e8e3e5-6c38-4fd4-ab7d-3aa50ad0d52c" />
+<img width="456" alt="image" src="https://github.com/user-attachments/assets/60e8e3e5-6c38-4fd4-ab7d-3aa50ad0d52c" />
 
-<img width="460" alt="image" src="https://github.com/user-attachments/assets/109605eb-f9b3-497f-bde6-a57453164779" />
+<img width="456" alt="image" src="https://github.com/user-attachments/assets/109605eb-f9b3-497f-bde6-a57453164779" />
 
 
 

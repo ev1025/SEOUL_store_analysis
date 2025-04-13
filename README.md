@@ -13,7 +13,7 @@
 | - Streamlit 페이지 제작 (매출 예측, 매물 추천)     |  - Streamlit 페이지 제작 (각 페이지 기초 화면)                                                  |
 | - Machine Learning을 활용한 매출 예측              |    - 발표 자료 제작 보완 (PPT, 시연 영상)              |
 | &nbsp;&nbsp;&nbsp;└ 회귀분석: `RandomForest`, `XGBOOST` |                   |
-| &nbsp;&nbsp;&nbsp;└ 군집분석: `KNN`                 |                                                    |
+| &nbsp;&nbsp;&nbsp;└ 군집분석: `K-Means`                 |                                                    |
 | &nbsp;&nbsp;&nbsp;└ 시계열분석: `GRU`, `LSTM`, `DEEPAR+` |                                                    |
 
 
@@ -63,6 +63,7 @@
 - 직장 인구 (19,476 rows × 26 columns)
 - 아파트 정보 (17,623 rows × 20 columns)
 - 집객 시설 수 (18,936 rows × 25 columns)
+- 상권 영역 데이터(21,675 rows × 6 columns)
 ```
 
 #### &nbsp; 2) 💳 상권 및 소비 데이터  (**서울 열린데이터 광장**)
@@ -77,7 +78,11 @@
 - 상가 매물 데이터 (134,411개)  
 - 행정동별 임대료 (1,231 rows × 10 columns) 
 ```
-#### &nbsp; 4) Streamlit 폴더 구조
+#### &nbsp; 4) ❓ 상가 매물 Q&A 데이터 (자체 제작)
+```
+- 서울시 상가 매물에 대한 질문, 답변 데이터 (110 rows x 2 columns)
+```
+#### &nbsp; 5) Streamlit 폴더 구조
 ```
 📁 Streamlit
  ├─ app.py
@@ -124,12 +129,26 @@
 
 
 ### 4. 주요 기능
-#### &nbsp;1) 데이터 전처리
+#### &nbsp;1) 데이터 전처리   
+#### &emsp; ① 상권 분석 데이터 통합 (229415 rows × 178 columns)    
+&emsp;&emsp;a) 데이터별 2024년 자료가 상이하여 2021년 1분기 ~ 2023년 4분기 까지의 자료만 필터링)     
+&emsp;&emsp;b) 인구 통계 데이터(상주인구, 유동인구, 집객시설 등), 상권별 매출 데이터, 점포 데이터를 순차적으로 merge    
+&emsp;&emsp;c) merge 과정에서 메모리 부족으로 행정동, 상권, 업종 카테고리 라벨 인코딩 진행 후 merge      
+&emsp;&emsp;d) 라벨 인코딩 과정에서 생성된 라벨 참조 테이블에 영역 데이터의 상권별 좌표(위도, 경도) merge    
 
- &emsp;[전처리 과정]
-- Chunking: RecursiveCharacterTextSplitter로 문장 블록 분할
-- Embedding: OpenAIEmbeddings를 통해 의미기반 벡터 생성
-- DB 저장: ChromaDB로 검색 최적화된 벡터 저장 구조 구현
+#### &emsp; ② 상권 분석 데이터 이상치 처리, 스케일링  (221,301 rows  
+&emsp;&emsp;a) 업종별 평균 및 분산을 계산하여 적정 범위를 설정    
+&emsp;&emsp;b) 적정 범위를 벗어나는 이상치 제거 (제거 후 평균 9.5억 → 7억 축소)    
+&emsp;&emsp;c) 매출이 지나치게 높은 업종의 이상치 대체    
+&emsp;&emsp;d) 종속변수인 매출의 범위가 매우 커서 로그 스케일링 진행    
+&emsp;&emsp;e) 전체 독립변수를 MinMaxScaling하여 정규화    
+
+
+
+
+
+
+
 
 
 #### &nbsp; 2) 데이터 모델링
@@ -139,7 +158,7 @@
 | 항목     | 사용 모델                               |
 |---------------|-------------------------------------------|
 | 회귀 분석     | `XGBoostClassifier`, `RandomForestClassifier` |
-| 군집 분석     | `KNN`                                      |
+| 군집 분석     | `K-Means`                                      |
 | 시계열 분석   | `GRU`, `LSTM`, `DeepAR+`                   |     
    
 
@@ -162,7 +181,7 @@
  | **항목** | **설명** |
  |------|------|
  | 파인튜닝(Fine-tuning) | `GPT-4o-mini`, `Gemma3_12b` 모델을 자체 Q&A 데이터(108개)로 미세조정 |
- | Retrieval-Augmented Generation | 크롤링한 13만 개 상가 데이터를 `ChromaDB`에 저장하여 검색 정확도 향상 |
+ | Retrieval-Augmented Generation | 13만 상가 매물 데이터를 `ChromaDB`에 저장하여 답변 정확도 개선 |
  | 검색 최적화 | `MMR(Maximal Marginal Relevance)` 기반 유사 매물 필터링 |
  | 랭킹 개선 | `Cohere Rerank`를 통해 의미 기반 재정렬 및 중복 제거 |  
  | 출력 형식 개선 | `Few-shot` 기법으로 자연스럽고 일관된 답변 유도 |  

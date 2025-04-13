@@ -187,22 +187,15 @@
 
 <img width="1393" alt="image" src="https://github.com/user-attachments/assets/f7a84907-e6b4-4b4d-93b7-5553f74d6d30" />
 
-<img width="456" height="100" alt="image" src="https://github.com/user-attachments/assets/556f1cd6-678a-45a5-8d0a-c15897bf989b" />
-
-<img width="456" alt="image" src="https://github.com/user-attachments/assets/60e8e3e5-6c38-4fd4-ab7d-3aa50ad0d52c" />
-
-<img width="456" alt="image" src="https://github.com/user-attachments/assets/109605eb-f9b3-497f-bde6-a57453164779" />
-
-
 
 #### &emsp; ② 상권분석  
 &emsp;&emsp;a) 기능 : 유동인구, 평균 매출, 폐업률, 개업률, 평균 임대료, 업종별 임대료 정보 제공
 
 &emsp;&emsp;b) 모델링   
 
-<img width="1378" alt="image" src="https://github.com/user-attachments/assets/c20af0ea-b381-4b4d-8771-869ba7024faa" />
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/f0d828bf-c464-4f9a-8ba1-87e4cb7a6976" />
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/c3764298-8f29-434b-a52b-cc4804b24e8e" />
+<img width="1380" alt="image" src="https://github.com/user-attachments/assets/12f34678-4e47-4e07-9537-89cde76f08d7" />
+<img width="1371" alt="image" src="https://github.com/user-attachments/assets/cbc77cdd-895b-4121-b005-5aff578ba323" />
+<img width="1371" alt="image" src="https://github.com/user-attachments/assets/c9069109-55a8-4b7a-9af7-7139ef477dc2" />
 
 
 ### 6. 프로젝트 소회

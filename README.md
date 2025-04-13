@@ -186,8 +186,11 @@
 &emsp;&emsp;b) 모델링    
 
 <img width="1393" alt="image" src="https://github.com/user-attachments/assets/f7a84907-e6b4-4b4d-93b7-5553f74d6d30" />
+
 <img width="456" alt="image" src="https://github.com/user-attachments/assets/556f1cd6-678a-45a5-8d0a-c15897bf989b" />
+
 <img width="466" alt="image" src="https://github.com/user-attachments/assets/60e8e3e5-6c38-4fd4-ab7d-3aa50ad0d52c" />
+
 <img width="460" alt="image" src="https://github.com/user-attachments/assets/109605eb-f9b3-497f-bde6-a57453164779" />
 
 

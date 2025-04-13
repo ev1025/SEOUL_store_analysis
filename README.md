@@ -119,54 +119,50 @@
 ```
 
 
-### 4. 데이터 분석
-#### 1) 데이터 전처리
+### 4. 주요 기능
+#### &nbsp;1) 데이터 전처리
 
- &nbsp;&nbsp;&nbsp;[전처리 과정]
+ &emsp;[전처리 과정]
 - Chunking: RecursiveCharacterTextSplitter로 문장 블록 분할
 - Embedding: OpenAIEmbeddings를 통해 의미기반 벡터 생성
 - DB 저장: ChromaDB로 검색 최적화된 벡터 저장 구조 구현
 
 
-#### 2) 데이터 모델링
-① 상권 매출 예측 모델   
-a) 기능 : 사용자가 선택한 상권 및 업종 정보를 바탕으로, 해당 조건에 맞는 예상 매출을 예측      
-b) 사용 모델   
-- 회귀 분석: XGBoostClassifier, RandomForestClassifier
-- 군집 분석: KNN
-- 시계열 분석: GRU, LSTM, DeepAR+   
+#### &nbsp; 2) 데이터 모델링
+&emsp;**① 상권 매출 예측 모델**   
+&emsp;&emsp;a) 기능 : 사용자가 선택한 상권 및 업종 정보를 바탕으로, 해당 조건에 맞는 예상 매출을 예측      
+&emsp;&emsp;b) 사용 모델    
+&emsp;&emsp; - 회귀 분석: XGBoostClassifier, RandomForestClassifier   
+&emsp;&emsp; - 군집 분석: KNN   
+&emsp;&emsp; - 시계열 분석: GRU, LSTM, DeepAR+      
 
-c) 특징
-- 공공데이터 기반의 시계열 분석 모델을 활용해 정량적이고 신뢰도 높은 예측 가능
-- 동 단위 상권의 소비 성향과 성장 흐름을 고려하여 파악한 서울시 각 상권별 트렌드를 이용하여 매출 예측에 차별화 적용
-- 업종별 특성(예: 카페 vs 식당)을 고려하여 세분화된 매출 예측 제공
+&emsp;&emsp;c) 특징   
+&emsp;&emsp;- 공공데이터 기반의 시계열 분석 모델을 활용해 정량적이고 신뢰도 높은 예측 가능   
+&emsp;&emsp;- 동 단위 상권의 소비 성향과 성장 흐름을 고려하여 파악한 서울시 각 상권별 트렌드를 이용하여 매출 예측에 차별화 적용   
+&emsp;&emsp;- 업종별 특성(예: 카페 vs 식당)을 고려하여 세분화된 매출 예측 제공   
   
 <img width="1155" alt="image" src="https://github.com/user-attachments/assets/3f50fab2-4f89-40b1-9901-2850a04e7eaa" />   
 
+<br>
 
-② 맞춤형 매물 추천 모델 (RAG 기반 LLM)      
-a) 기능 : 사용자가 자연어로 입력한 조건(예: “월세 300만 원 이하, 카페 가능”)을 이해하고, 해당 조건에 맞는 최적 매물 리스트를 추천   
-b) 사용 모델   
-- LLM 모델: GPT-4o-mini, Gemma-3B-12B 파인튜닝 모델
-- Retrieval 방식: RAG(Retrieval Augmented Generation) 기반
-- 검색 최적화: MMR(Maximal Marginal Relevance) 기반 유사 매물 필터링
-- 랭킹 개선: Cohere Rerank를 통해 의미 기반 재정렬 및 중복 제거
-- 체인 구조: LangChain의 RetrievalQA Chain, ContextualCompressionRetriever 적용
+&emsp;**② 맞춤형 매물 추천 모델**  
+&emsp;&emsp;a) 기능 : 사용자가 자연어로 입력한 조건(예: “월세 300만 원 이하, 쌍문동, 카페”)을 이해하고, 해당 조건에 맞는 최적 매물정보와 추천 이유 제공     
+&emsp;&emsp;b) 모델링    
+&emsp;&emsp; - 파인튜닝(Fine-tuning) : `GPT-4o-mini`와 `Gemma3_12b`을 자체 제작한 Q&A데이터(108개)를 기반으로 미세조정하여, 다양한 질문에도 매물을 추천하도록 유도
+&emsp;&emsp; - RAG(Retrieval-Augmented Generation) :  직방 사이트에서 크롤링한 13만 개의 상가 데이터를 `ChromaDB`에 축적하여 검색 속도 및 질문의 정확도 향상
+&emsp;&emsp; - 검색 최적화 : `MMR(Maximal Marginal Relevance)` 기반 유사 매물 필터링     
+&emsp;&emsp; - 랭킹 개선 : `Cohere Rerank`를 통해 의미 기반 재정렬 및 중복 제거      
+&emsp;&emsp; - 출력 형식 개선 : `Few-shot` 기법을 활용하여 자연스럽고 일관된 답변 유도   
 
-c) 특징
-- 다양한 질문 방식(“싸고 넓은 곳”, “사람 많은 곳 근처”)에도 대응하는 대화형 질의 응답 지원
-- AI가 사용자 조건의 의도와 표현을 파악하여 매물을 정확하게 추천
-- 중복 제거 및 유사도 기반 정렬로 사용자 만족도 높은 결과 제공
-
-2. 맞춤형 매물 추천 (RAG 기반 LLM)
-
+&emsp;&emsp;c) 특징   
+&emsp;&emsp; - ChromaDB에 저장된 데이터에는 데이터에는 월세, 보증금, 권리금, 층수, 평수, 매물 설명이 있는데, 모델
+&emsp;&emsp; - 직방 사이트에서 크롤링한 13만 개의 상가 데이터를 ChromaDB에 축적 후 다양한 RAG기법을 적용하여 사용자 요청에 맞는 적절한 매물을 선정       
+&emsp;&emsp; - 업종별 특성(예: 카페 vs 식당)을 고려하여 세분화된 매출 예측 제공   
+       
 
 💛💛매물추천 지도가 깜빡거려서 ... 경민님 캡쳐 plz
 
 
-특징
-- 매물 추천에 특화된 맞춤형 대화형 AI로, 사용자의 질문 방식이나 표현이 다소 애매하거나 다양하더라도, 실제 창업 조건에 맞춰 정확하게 이해하고 응답
-- 유사 매물 필터링 → 의미 유사도 기반 추천 → 중복 제거 및 최적 매물 재정렬
 
 ### 유틸리티 기능(수정중..⏳)
 

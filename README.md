@@ -185,7 +185,7 @@
 
 &emsp;&emsp;b) 모델링    
 
-<img width="1393" alt="image" src="https://github.com/user-attachments/assets/f7a84907-e6b4-4b4d-93b7-5553f74d6d30" />
+<img width="1155" alt="image" src="https://github.com/user-attachments/assets/f7a84907-e6b4-4b4d-93b7-5553f74d6d30" />
 
 
 #### &emsp; ② 상권분석  

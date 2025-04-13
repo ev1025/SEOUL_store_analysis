@@ -27,7 +27,7 @@
 
 <br>
 
-### 서비스 흐름도
+### 🧭 서비스 흐름도
 ![image](https://github.com/user-attachments/assets/dcfb4efd-54e8-47df-89fd-bff63c57289d)
 
 <br>

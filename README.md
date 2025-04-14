@@ -190,12 +190,32 @@
 <br>
 
 &emsp;&emsp; **b) GRU**
-
+> -
 
 <br>
 
 &emsp;&emsp; **c) DeepAR+**
-> -
+> - 데이터 분할: 훈련 데이터, 검증 데이터, 테스트 데이터를 8:1:1 비율로 분할
+> - 모델 정의: DeepAR 스타일의 LSTM 기반 시계열 모델 정의
+> - 모델 훈련:`X_train`, `y_train`으로 100 에포크 동안 훈련, 검증 데이터셋으로 검증 진행
+>   
+>   ```python
+>   model.fit(X_train, y_train, epochs=100, batch_size=128, validation_data=(X_val, y_val))
+>   ```
+> - 모델 컴파일: optimizer='adam', loss='mean_squared_error'
+> - 예측: 훈련된 모델을 이용하여 X_test로 예측 수행
+> - 역변환: 예측 결과를 원래 스케일로 복원
+> - 평가 지표: RMSE, MAE, R² 계산
+>   - RMSE:
+>   - MAE:
+>   - R²
+
+<br>
+
+&emsp;&emsp; **(모델 검증에 사용된 주요 지표)**
+- RMSE (Root Mean Squared Error): 예측 값과 실제 값 간의 차이를 제곱한 후 평균을 취한 뒤 루트를 씌운 값으로, 예측 정확도를 평가.
+- MAE (Mean Absolute Error): 예측 값과 실제 값 간의 절대적인 차이의 평균으로, 오차가 얼마나 큰지 직관적으로 파악 가능.
+- R² (Coefficient of Determination): 모델의 설명력을 나타내는 지표로, 예측 값이 실제 값을 얼마나 잘 설명하는지를 평가.
 
 <br>
 

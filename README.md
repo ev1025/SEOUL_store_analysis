@@ -181,6 +181,9 @@
 
 #### &nbsp; 2) 맞춤형 매물 추천 모델  
 
+<img width="1155" alt="image" src="https://github.com/user-attachments/assets/87635fea-9ec2-419f-be36-dac97fc5f8a2" />   
+
+
 💛💛 매물추천 지도가 깜빡거려서 ... 경민님 캡쳐 plz    
 
 ##### &emsp; ① 기능 : 유저의 자연어 입력(예: “월세 300만 원 이하, 쌍문동, 카페”)을 이해하고 조건에 맞는 매물 정보와 추천 이유 제공    

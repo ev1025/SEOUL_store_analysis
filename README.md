@@ -173,7 +173,7 @@
 ##### &emsp; ② 모델링    
 | 항목     | 사용 모델                               |
 |---------------|-------------------------------------------|
-| 회귀 분석     | `XGBoostClassifier`, `RandomForestClassifier` |
+| 회귀 분석     | `XGBoostRegressor`, `RandomForestRegressor` |
 | 군집 분석     | `K-Means`                                      |
 | 시계열 분석   | `GRU`, `LSTM`, `DeepAR+`                   |     
    

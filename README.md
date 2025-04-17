@@ -89,51 +89,6 @@
 ```
 - 서울시 상가 매물에 대한 질문, 답변 데이터 (110 rows x 2 columns)
 ```
-#### &nbsp; 5) Streamlit 폴더 구조
-```
-📁 Streamlit
- ├─ app.py
- ├─ state.py
- │ 
- ├─ 📁 page
- │   ├─ commercial_analysis.py
- │   ├─ home.py
- │   ├─ loan.py
- │   └─ location.py
- │      
- ├─ 📁 model
- │   ├─ deepar_model_4.pkl
- │   ├─ scaler_X.pkl
- │   └─ scaler_y.pkl
- │ 
- ├─ 📁 chroma_db3
- │   ├─ chroma.sqlite3
- │   ├─ 📁 0d585fd0-b6af-4c08-af2b-a7719d61ce99
- │   └─ 📁 2781d1b3-d913-47b4-a651-05687acb1bbe
- │          
- ├─ 📁 data
- │   ├─ group_average_weights_상권_라벨.csv
- │   ├─ group_average_weights_서비스_라벨.csv
- │   ├─ group_average_weights_행정동_라벨.csv
- │   ├─ raw_data.csv
- │   └─ ref_data.csv
- │      
- ├─ 📁 img
- │   ├─ il_best.svg
- │   ├─ il_start.svg
- │   ├─ image.jpg
- │   ├─ llogo.png
- │   ├─ main_img.jpg
- │   ├─ newmoonlogo.png
- │   ├─ NEWMOON_LOGO.png
- │   ├─ slogo.png
- │   └─ 상권분석.png
- │      
- └─ 📁 util
-     ├─ creata_map.py
-     └─ popup.py
-```
-
 
 ### 4. 데이터 전처리
 
@@ -223,8 +178,6 @@
 
 <img width="1155" alt="image" src="https://github.com/user-attachments/assets/87635fea-9ec2-419f-be36-dac97fc5f8a2" />   
 
-
-💛💛 매물추천 지도가 깜빡거려서 ... 경민님 캡쳐 plz    
 
 ##### &emsp; ① 기능 : 유저의 자연어 입력(예: “월세 300만 원 이하, 쌍문동, 카페”)을 이해하고 조건에 맞는 매물 정보와 추천 이유 제공    
 ##### &emsp; ② 모델링    
